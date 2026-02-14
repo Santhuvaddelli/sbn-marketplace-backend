@@ -1,0 +1,17 @@
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { CategoryService } from './category.service';
+
+@Controller('categories')
+export class CategoryController {
+    constructor(private readonly categoryService: CategoryService) { }
+
+    @Get()
+    async getAllCategories() {
+        return this.categoryService.getAllCategories();
+    }
+    @Get("/categories-tree")
+    async getCategoryTree() {
+        return this.categoryService.getCategoryTree();
+    }
+}
+
