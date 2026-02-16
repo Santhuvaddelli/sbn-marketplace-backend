@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: 'https://duhudkcsjq2s9.cloudfront.net',
+    origin: 'http://sbn-marketplace.s3-website.eu-north-1.amazonaws.com',
     credentials: true,
   });
 
