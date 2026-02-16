@@ -37,7 +37,7 @@ jobs:
                 npm install --production
 
                 echo "Restarting PM2"
-                pm2 restart backend
+                pm2 reload sbn-backend --update-env
 
                 echo "Deployment completed successfully"
           EOF
