@@ -116,9 +116,7 @@ export class RegisterService {
         if (!user) {
             throw new UnauthorizedException("User Not Found");
         }
-        if (!data) {
-            throw new BadRequestException("Please provide data to update");
-        }
+
         user.firstName = data.firstName;
         user.lastName = data.lastName;
         user.email = data.email;
