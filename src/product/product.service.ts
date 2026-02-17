@@ -44,7 +44,7 @@ export class ProductService {
     const segmentIds = segments.map(seg => seg._id);
 
     // 4. Find Products in these Segments
-    return this.productModel.find({ segmentId: { $in: segmentIds } });
+    return this.productModel.find({ segmentId: { $in: segmentIds } }).lean();
   }
 
   // Get Products by SubCategory Name
@@ -58,7 +58,7 @@ export class ProductService {
     const segmentIds = segments.map(seg => seg._id);
 
     // 3. Find Products in these Segments
-    return this.productModel.find({ segmentId: { $in: segmentIds } });
+    return this.productModel.find({ segmentId: { $in: segmentIds } }).lean();
   }
 
   // Get Products by Segment Name
